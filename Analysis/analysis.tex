@@ -5,7 +5,7 @@
 \subsection{Client Identification}
 My client is John West, He is the manager of Waterbeach colts Football Clubs U16 team.  He has a high level of knowledge on computers, as he uses them on a daily basis within his job. He uses computers for a variety of tasks, ranging from basic to advanced. He mainly uses Windows systems however he has used a Mac in the past. John requires a team management program so that he can easily manage his team.
 \subsection{Define the current system}
-The current system is done with pen and paper. A computer is used for contacting the players. The client has to manually collect all the computer data and copy it down to paper. The rest of the data that is required is all from memory. Currently the client makes note of who is/isn't available on paper. He collects this data from email replies.  He then works out where players can play and sorts out a team sheet for the upcoming game.
+The current system is done with pen and paper. An Email system is used for contacting the players. The rest of the data that is required is all from memory.
 \subsection{Describe the problems}
 There is no tracking for who has replied to the emails and who hasn't, this is one problem.  Another is that most the data comes from the clients memory; this can be slow as it's easy to forget a certain item/criteria momentarily. Due to using pen and paper, the current system gets rather messy after a few team sheets are created. It is also prone to go missing. Paper waste is also high making it environmentally unfriendly.
 
@@ -43,7 +43,7 @@ Does the user have a particular solution in mind?
 \section{Investigation}
 
 \subsection{The current system}
-
+The current system is done with pen and paper. A computer is used for contacting the players. The client has to manually collect all the computer data and copy it down to paper. The rest of the data that is required is all from memory. Currently the client makes note of who is/isn't available on paper. He collects this data from email replies.  He then works out where players can play and sorts out a team sheet for the upcoming game.
 \subsubsection{Data sources and destinations}
 
 \subsubsection{Algorithms}
@@ -53,32 +53,50 @@ Does the user have a particular solution in mind?
 \subsubsection{Input Forms, Output Forms, Report Formats}
 
 \subsection{The proposed system}
-Proposed system is going to set out the team sheet, show injuries and possible replacements. It will also store all the information of players with attributes and contact information. It should also include an email reply system to show who's replied and available for upcoming events.  New records will need to be added every time a new player joins and a record will need to be deleted every time a player leaves.
+Proposed system is going to set out the team sheet, show injuries and possible replacements. It will also store all the information of players with attributes and contact information along with data from previous games. It should also include an email reply system to show who's replied and available for upcoming events. New records will need to be added every time a new player joins and a record will need to be deleted every time a player leaves the club.
 
 \subsubsection{Data sources and destinations}
+
+\begin{table}[]
+\centering
+\label{my-label}
+\begin{tabular}{|l|l|l|l|}
+\hline
+Source       & Data                  & Example Data  & Destination     \\ \hline
+Client Input & Player Forename       & Max           & Player Database \\ \hline
+Client Input & Player Surname        & Smith         & Player Database \\ \hline
+Client Input & Player Rating         & 9             & Player Database \\ \hline
+Client Input & Player Contact Number & Msmith@gmail.com & Player Database \\ \hline
+Client Input & Player Position       & CM            & Player Database \\ \hline
+Client Input & Player Availability   & Yes           & Player Database \\ \hline
+\end{tabular}
+\end{table}
 
 \subsubsection{Data flow diagram}
 
 \subsubsection{Data dictionary}
 
 \subsubsection{Volumetrics}
-
+The system should be able to store 16 players and their data initially and cater for expansion to 30 players and their data. It will also need to cater for 40 games initially with the ability to expand to 400(10 seasons). 
 \section{Objectives}
 
 \subsection{General Objectives}
-
+To create an easy to use team sheet selector.
 \subsection{Specific Objectives}
-
+To allow the client to edit player details and add game details on a weekly basis.
 \subsection{Core Objectives}
-
+The system must lay out a team sheet. It must also show the availability of players, this may be due to injuries or just being away on that date.     
 \subsection{Other Objectives}
-
+It would be desirable to have individual stats for each player rather than an overall rating giving a more detailed overview of a players ability.
 \section{ER Diagrams and Descriptions}
 
 \subsection{ER Diagram}
 
-\subsection{Entity Descriptions}
 
+\subsection{Entity Descriptions}
+Player(PlayerID,PlayerForename,PlayerSurname,PlayerRating,PlayerContact,PlayerPosition)
+Match(MatchID,MatchDate,MatchScore)
+Goals(MatchID,PlayerID,Quantity)
 \section{Object Analysis}
 
 \subsection{Object Listing}
@@ -92,16 +110,15 @@ Proposed system is going to set out the team sheet, show injuries and possible r
 \section{Constraints}
 
 \subsection{Hardware}
-The client has a windows desktop PC and laptop along with an Ipad.
+The client has a windows desktop PC and laptop along with an Ipad so is use to a couple of operating systems. The program would most likely be run on a Windows PC however using the portability of the Ipad would be advantageous.
 \subsection{Software}
-The client has left it to me to choose the software. 
+The client has no preferences on the software that is used and has therefore left it up to me to choose.  
 \subsection{Time}
-There is a project deadline set by the teacher. 
+The client would like the program ready before June 2015, this would give the client time to become familiar with the program and fix any bugs that may occur. 
 \subsection{User Knowledge}
-The user has a very large amount of knowledge as he uses computers on a daily basis. This includes basic and complex tasks. 
-
+The user's job heavily involves computers, this gives him good background knowledge on how they operate. On a daily basis he completes basic and complex task demonstrating his depth of knowledge. 
 \subsection{Access restrictions}
-Only he will be allowed access to the system as it contains personal information. 
+Anybody will be able to access the current team sheet as it is useful for the players to see who they are playing with and what position they are playing. Due to the system containing contact information there will need to be restricted access on some areas of program to ensure that personal information is not shared.   
 
 \section{Limitations}
 
