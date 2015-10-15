@@ -53,28 +53,56 @@ The current system is done with pen and paper. A computer is used for contacting
 \subsubsection{Input Forms, Output Forms, Report Formats}
 
 \subsection{The proposed system}
-Proposed system is going to set out the team sheet, show injuries and possible replacements. It will also store all the information of players with attributes and contact information along with data from previous games. It should also include an email reply system to show who's replied and available for upcoming events. New records will need to be added every time a new player joins and a record will need to be deleted every time a player leaves the club.
+Proposed system is going to set out the team sheet, show injuries and possible replacements. It will also store all the information of players with attributes and contact information along with data from previous games. It should also include an email reply system to show who's available for upcoming events. New records will need to be added every time a new player joins and a record will need to be deleted every time a player leaves the club.
 
 \subsubsection{Data sources and destinations}
 
 \begin{table}[]
 \centering
+\caption{My caption}
 \label{my-label}
-\begin{tabular}{|l|l|l|l|}
-\hline
-Source       & Data                  & Example Data  & Destination     \\ \hline
-Client Input & Player Forename       & Max           & Player Database \\ \hline
-Client Input & Player Surname        & Smith         & Player Database \\ \hline
-Client Input & Player Rating         & 9             & Player Database \\ \hline
-Client Input & Player Contact Number & Msmith@gmail.com & Player Database \\ \hline
-Client Input & Player Position       & CM            & Player Database \\ \hline
-Client Input & Player Availability   & Yes           & Player Database \\ \hline
+\begin{tabular}{llll}
+Source               & Data             & Example Data    & Destination \\
+Player Input         & Player Forename  & Harry           & Form        \\
+Player Input         & Player Surname   & West            & Form        \\
+Player Input         & Player Email     & Hwest@gmail.com & Form        \\
+Player Input         & Player Position  & GK              & Form        \\
+Client/manager Input & Player Rating    & 8               & Form        \\
+Client Input         & Form             &                 & System      \\
+Client Input         & PlayerAvailable    & N               &             \\
+System               & {\ul Player ID}  & 123             & System      \\
+System               & {\ul Match ID}   & 987             & System      \\
+Client Input         & Match Result     & W               & System      \\
+Client Input         & Match Opposition & Milton          & System      \\
+Client Input         & Goal Quantity    & 2               & System     
 \end{tabular}
 \end{table}
 
 \subsubsection{Data flow diagram}
 
 \subsubsection{Data dictionary}
+
+\begin{table}[]
+\centering
+\caption{My caption}
+\label{my-label}
+\begin{tabular}{llllll}
+\hline
+\multicolumn{1}{|l|}{Name}           & \multicolumn{1}{l|}{Data Type} & \multicolumn{1}{l|}{Length}   & \multicolumn{1}{l|}{Validation}                                                     & \multicolumn{1}{l|}{Example Data}    & \multicolumn{1}{l|}{Comment}                                         \\ \hline
+\multicolumn{1}{|l|}{PlayerID}       & \multicolumn{1}{l|}{Integer}   & \multicolumn{1}{l|}{3 Digits} & \multicolumn{1}{l|}{\begin{tabular}[c]{@{}l@{}}3 Digits,\\ must Exist\end{tabular}} & \multicolumn{1}{l|}{123}             & \multicolumn{1}{l|}{Unique to each individual player}                \\ \hline
+\multicolumn{1}{|l|}{PlayerForename} & \multicolumn{1}{l|}{String}    & \multicolumn{1}{l|}{15 Chars} & \multicolumn{1}{l|}{At least 3 digits entered}                                      & \multicolumn{1}{l|}{Harry}           & \multicolumn{1}{l|}{First name, capital first char}                  \\ \hline
+\multicolumn{1}{|l|}{PlayerSurname}  & \multicolumn{1}{l|}{String}    & \multicolumn{1}{l|}{20 Chars} & \multicolumn{1}{l|}{At least 3 digits entered}                                      & \multicolumn{1}{l|}{West}            & \multicolumn{1}{l|}{Last name, capital first char}                   \\ \hline
+\multicolumn{1}{|l|}{PlayerPosition} & \multicolumn{1}{l|}{String}    & \multicolumn{1}{l|}{2 Chars}  & \multicolumn{1}{l|}{Must be 2 chars}                                                & \multicolumn{1}{l|}{GK}              & \multicolumn{1}{l|}{In capitals.}                                    \\ \hline
+\multicolumn{1}{|l|}{PlayerRating}   & \multicolumn{1}{l|}{Integer}   & \multicolumn{1}{l|}{2 Digits} & \multicolumn{1}{l|}{Maximum of 2 chars}                                             & \multicolumn{1}{l|}{8}               & \multicolumn{1}{l|}{Most likely to only be 1 digit, rated out of 10} \\ \hline
+\multicolumn{1}{|l|}{PlayerEmail}    & \multicolumn{1}{l|}{String}    & \multicolumn{1}{l|}{50 Chars} & \multicolumn{1}{l|}{Must have an @}                                                 & \multicolumn{1}{l|}{Hwest@gmail.com} & \multicolumn{1}{l|}{Contact for player}                              \\ \hline
+\multicolumn{1}{|l|}{MatchID}        & \multicolumn{1}{l|}{Integer}   & \multicolumn{1}{l|}{3 Digits} & \multicolumn{1}{l|}{3 Digits, must exist}                                           & \multicolumn{1}{l|}{869}             & \multicolumn{1}{l|}{Unique to each match}                            \\ \hline
+\multicolumn{1}{|l|}{MatchDate}      & \multicolumn{1}{l|}{String}    & \multicolumn{1}{l|}{8 Chars}  & \multicolumn{1}{l|}{Must Exist}                                                     & \multicolumn{1}{l|}{23/09/16}        & \multicolumn{1}{l|}{Date of the match}                               \\ \hline
+\multicolumn{1}{|l|}{MatchResult}    & \multicolumn{1}{l|}{String}    & \multicolumn{1}{l|}{1 Char}   & \multicolumn{1}{l|}{Must exist}                                                     & \multicolumn{1}{l|}{W}               & \multicolumn{1}{l|}{W = win, D = draw,  L= lose}                     \\ \hline
+\multicolumn{1}{|l|}{MatchOppositon} & \multicolumn{1}{l|}{String}    & \multicolumn{1}{l|}{20 Char}  & \multicolumn{1}{l|}{Minimum of 5 digits}                                            & \multicolumn{1}{l|}{Milton}          & \multicolumn{1}{l|}{Opposition team name}                            \\ \hline
+\multicolumn{1}{|l|}{GoalQuantity}   & \multicolumn{1}{l|}{Integer}   & \multicolumn{1}{l|}{2 Digits} & \multicolumn{1}{l|}{At least one digit must exist}                                  & \multicolumn{1}{l|}{2}               & \multicolumn{1}{l|}{99\% will be one digit}                          \\ \hline
+                                     &                                &                               &                                                                                     &                                      &                                                                     
+\end{tabular}
+\end{table}
 
 \subsubsection{Volumetrics}
 The system should be able to store 16 players and their data initially and cater for expansion to 30 players and their data. It will also need to cater for 40 games initially with the ability to expand to 400(10 seasons). 
@@ -94,9 +122,9 @@ It would be desirable to have individual stats for each player rather than an ov
 
 
 \subsection{Entity Descriptions}
-Player(PlayerID,PlayerForename,PlayerSurname,PlayerRating,PlayerContact,PlayerPosition)
-Match(MatchID,MatchDate,MatchScore)
-Goals(MatchID,PlayerID,Quantity)
+Player( {\ul PlayerID},PlayerForename,PlayerSurname,PlayerRating,PlayerEmail,PlayerPosition,PlayerAvailable)
+Match({\ul MatchID},MatchDate,MatchResult,MatchOpposition)
+Goals(MatchID,PlayerID,GoalQuantity)
 \section{Object Analysis}
 
 \subsection{Object Listing}
