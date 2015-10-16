@@ -44,13 +44,17 @@ Does the user have a particular solution in mind?
 
 \subsection{The current system}
 The current system is done with pen and paper. A computer is used for contacting the players. The client has to manually collect all the computer data and copy it down to paper. The rest of the data that is required is all from memory. Currently the client makes note of who is/isn't available on paper. He collects this data from email replies.  He then works out where players can play and sorts out a team sheet for the upcoming game.
-\subsubsection{Data sources and destinations}
+
 
 \subsubsection{Algorithms}
 
-\subsubsection{Data flow diagram}
+
 
 \subsubsection{Input Forms, Output Forms, Report Formats}
+\begin{figure}[H]
+	\includegraphics{formation}
+	\includegraphics{squad}
+\end{figure}
 
 \subsection{The proposed system}
 Proposed system is going to set out the team sheet, show injuries and possible replacements. It will also store all the information of players with attributes and contact information along with data from previous games. It should also include an email reply system to show who's available for upcoming events. New records will need to be added every time a new player joins and a record will need to be deleted every time a player leaves the club.
@@ -59,7 +63,7 @@ Proposed system is going to set out the team sheet, show injuries and possible r
 
 \begin{table}[]
 \centering
-\caption{My caption}
+
 \label{my-label}
 \begin{tabular}{llll}
 Source               & Data             & Example Data    & Destination \\
@@ -69,7 +73,7 @@ Player Input         & Player Email     & Hwest@gmail.com & Form        \\
 Player Input         & Player Position  & GK              & Form        \\
 Client/manager Input & Player Rating    & 8               & Form        \\
 Client Input         & Form             &                 & System      \\
-Client Input         & PlayerAvailable    & N               &             \\
+Client Input         & Player Available    & Y               &             \\
 System               & {\ul Player ID}  & 123             & System      \\
 System               & {\ul Match ID}   & 987             & System      \\
 Client Input         & Match Result     & W               & System      \\
@@ -104,7 +108,7 @@ Client Input         & Goal Quantity    & 2               & System
 \end{tabular}
 \end{table}
 
-\subsubsection{Volumetrics}
+\subsubsection{volumetrics}
 The system should be able to store 16 players and their data initially and cater for expansion to 30 players and their data. It will also need to cater for 40 games initially with the ability to expand to 400(10 seasons). 
 \section{Objectives}
 
@@ -128,7 +132,7 @@ Goals(MatchID,PlayerID,GoalQuantity)
 \section{Object Analysis}
 
 \subsection{Object Listing}
-
+ My objects are Players, Goals, Client and Matches. 
 \subsection{Relationship diagrams}
 
 \subsection{Class definitions}
