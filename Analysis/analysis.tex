@@ -48,11 +48,29 @@ The current system is done with pen and paper. A computer is used for contacting
 
 \subsubsection{Algorithms}
 
+func bubblesort( playerlist.rating)
+    for i from 1 to N
+        for j from 0 to N - 1
+           if playerlist[j] > playerlist[j + 1]
+              swap( playerlist[j], playerlist[j + 1] )
+end func
+For each in playerlist:
+	if playerlist.each.position = = (Required positon):
+		team_sheet.append(playerlist.each)
+		playerlist.pop(each)
+		Each = len.(playerlist)
+		
+	
+End For
+The for loop would be run for every position.
 
+Substitutes =  playerlist 
 
 \subsubsection{Input Forms, Output Forms, Report Formats}
 \begin{figure}[H]
+	This is what the current system looks like, pen and paper form, the system should have a similar layout.
 	\includegraphics{formation}
+	This is the available squad list, this is where the client currently chooses the team from. 
 	\includegraphics{squad}
 \end{figure}
 
@@ -60,29 +78,32 @@ The current system is done with pen and paper. A computer is used for contacting
 Proposed system is going to set out the team sheet, show injuries and possible replacements. It will also store all the information of players with attributes and contact information along with data from previous games. It should also include an email reply system to show who's available for upcoming events. New records will need to be added every time a new player joins and a record will need to be deleted every time a player leaves the club.
 
 \subsubsection{Data sources and destinations}
-
 \begin{table}[]
 \centering
-
+\caption{My caption}
 \label{my-label}
-\begin{tabular}{llll}
-Source               & Data             & Example Data    & Destination \\
-Player Input         & Player Forename  & Harry           & Form        \\
-Player Input         & Player Surname   & West            & Form        \\
-Player Input         & Player Email     & Hwest@gmail.com & Form        \\
-Player Input         & Player Position  & GK              & Form        \\
-Client/manager Input & Player Rating    & 8               & Form        \\
-Client Input         & Form             &                 & System      \\
-Client Input         & Player Available    & Y               &             \\
-System               & {\ul Player ID}  & 123             & System      \\
-System               & {\ul Match ID}   & 987             & System      \\
-Client Input         & Match Result     & W               & System      \\
-Client Input         & Match Opposition & Milton          & System      \\
-Client Input         & Goal Quantity    & 2               & System     
+\begin{tabular}{|l|l|l|l|}
+\hline
+Source               & Data             & Example Data    & Destination \\ \hline
+Player Input         & Player Forename  & Harry           & Form        \\ \hline
+Player Input         & Player Surname   & West            & Form        \\ \hline
+Player Input         & Player Email     & Hwest@gmail.com & Form        \\ \hline
+Player Input         & Player Position  & GK              & Form        \\ \hline
+Client/manager Input & Player Rating    & 8               & Form        \\ \hline
+Client Input         & Form             &                 & System      \\ \hline
+Client Input         & PlayerInjured    & N               &             \\ \hline
+System               & {\ul Player ID}  & 123             & System      \\ \hline
+System               & {\ul Match ID}   & 987             & System      \\ \hline
+Client Input         & Match Result     & W               & System      \\ \hline
+Client Input         & Match Opposition & Milton          & System      \\ \hline
+Client Input         & Goal Quantity    & 2               & System      \\ \hline
 \end{tabular}
 \end{table}
 
-\subsubsection{Data flow diagram}
+\subsubsection{Data flow diagrams}
+\begin{figure}[H]
+	\includegraphics{Data flow}
+\end{figure}
 
 \subsubsection{Data dictionary}
 
@@ -123,7 +144,9 @@ It would be desirable to have individual stats for each player rather than an ov
 \section{ER Diagrams and Descriptions}
 
 \subsection{ER Diagram}
-
+\begin{figure}[H]
+	\includegraphics{ER}
+\end{figure}
 
 \subsection{Entity Descriptions}
 Player( {\ul PlayerID},PlayerForename,PlayerSurname,PlayerRating,PlayerEmail,PlayerPosition,PlayerAvailable)
@@ -132,12 +155,17 @@ Goals(MatchID,PlayerID,GoalQuantity)
 \section{Object Analysis}
 
 \subsection{Object Listing}
- My objects are Players, Goals, Client and Matches. 
+ My objects are Players, Goals and Matches. 
 \subsection{Relationship diagrams}
+\begin{figure}[H]
+	\includegraphics{class diagram}
+\end{figure}
 
 \subsection{Class definitions}
+\begin{figure}[H]
+	\includegraphics{class def}
+\end{figure}
 
-\section{Other Abstractions and Graphs}
 
 \section{Constraints}
 
@@ -159,7 +187,10 @@ Anybody will be able to access the current team sheet as it is useful for the pl
 \subsection{Areas considered for future computerisation}
 
 \section{Solutions}
+My system could use a pre made database, this will benefit me and the client because it will save time compared to writing a database. This means that the final deadline can be moved forward giving the client more time to learn the program.  However a pre made database wont be tailored to the clients needs and therefore will have unnecessary extras. A high quality pre made database may also need to be bought. This will cost the client. Writing my own database for the project will benefit the client because the database will be tailored to there exact needs however it will be much more time consuming, writing and debugging, than a pre made database.
 
+Another option for the system is whether to have it as a desktop application or a web application. Having it as a desktop application will allow portability as the client doesn't need to be connected to the internet to be able to use the system (offline use). Having portability will be very useful for my client as it means that they can use the system at the pitch side on an Ipad. Depending on internet connection, the desktop application is going to run quicker. However making the system an web app will mean that it is easily accessible all the players. This means that they can look up who's on the team sheet for the upcoming game. A web app will require a web database, poor internet connection will jeopardise this link and therefore cause the system to crash. This wont happen on a desktop app. 
 \subsection{Alternative solutions}
 
 \subsection{Justification of chosen solution}
+I have chosen to write my own database for the client as it will then be tailored to there exact needs, improving efficiency due to no added extras. I have also chosen to make the system a desktop application as the portability aspect will be very useful.
