@@ -82,13 +82,12 @@ The for loop would be run for every position.
 Substitutes ->  playerlist 
 
 \subsubsection{Input Forms, Output Forms, Report Formats}
+This is what the current system looks like, pen and paper form, the system should have a similar layout.
 \begin{figure}[H]
-	This is what the current system looks like, pen and paper form, the system should have a similar layout.
 	\includegraphics{formation}
-	
-	
-	This is the available squad list, this is where the client currently chooses the team from. 
-
+\end{figure}
+\begin{figure}[H]
+This is the available squad list, this is where the client currently chooses the team from. 
 	\includegraphics{squad}
 \end{figure}
 
@@ -96,10 +95,9 @@ Substitutes ->  playerlist
 Proposed system is going to set out the team sheet, show injuries and possible replacements. It will also store all the information of players with attributes and contact information along with data from previous games. It should also include an email reply system to show who's available for upcoming events. New records will need to be added every time a new player joins and a record will need to be deleted every time a player leaves the club.
 
 \subsubsection{Data sources and destinations}
+
 \begin{table}[H]
 \centering
-
-\label{my-label}
 \begin{tabular}{|l|l|l|l|}
 \hline
 Source               & Data             & Example Data    & Destination \\ \hline
@@ -107,9 +105,9 @@ Player Input         & Player Forename  & Harry           & Form        \\ \hlin
 Player Input         & Player Surname   & West            & Form        \\ \hline
 Player Input         & Player Email     & Hwest@gmail.com & Form        \\ \hline
 Player Input         & Player Position  & GK              & Form        \\ \hline
-Client/manager Input & Player Rating    & 8               & Form        \\ \hline
+Client/manager In    & Player Rating    & 8               & Form        \\ \hline
 Client Input         & Form             &                 & System      \\ \hline
-Client Input         & PlayerInjured    & N               &             \\ \hline
+Client Input         & Player Injured   & N               & System      \\ \hline
 System               & {\ul Player ID}  & 123             & System      \\ \hline
 System               & {\ul Match ID}   & 987             & System      \\ \hline
 Client Input         & Match Result     & W               & System      \\ \hline
@@ -127,8 +125,8 @@ Client Input         & Goal Quantity    & 2               & System      \\ \hlin
 
 \begin{table}[H]
 \centering
-\label{my-label}
-\begin{tabular}{|p{2.5cm}|p{1cm}|p{1.5cm}|p{2.5cm}|p{2.5cm}|p{2.5cm}|} 
+%\begin{tabular}{|p{2.5cm}|p{1cm}|p{1.5cm}|p{2.5cm}|p{2.5cm}|p{2.5cm}|} 
+\begin{tabular}{|l|l|l|l|l|l|} 
 \hline
 Name            & Data Type & Length   & Validation                    & Example Data    & Comment                        \\ \hline
 PlayerID        & Integer   & 3 Digits & 3 Digits, Must exist          & 123             & Unique to each player          \\ \hline
@@ -149,6 +147,7 @@ GoalQuantity    & Integer   & 2 Digits & At least one digit must exist & 2      
 The system should be able to store 16 players and their data initially and cater for expansion to 30 players and their data. It will also need to cater for 40 games initially with the ability to expand to 400(10 seasons). 
 \section{Objectives}
 
+
 \subsection{General Objectives}
 To create an easy to use team sheet selector. There should be a clear organised layout which is easy to navigate around therefore making it more widely useable. Colours should be used appropriately to make the system more aesthetically pleasing. The use of colours should also increase the ease of use. 
 \subsection{Specific Objectives}
@@ -156,8 +155,12 @@ To allow the client to edit player details. Every week the client will need to a
 \subsection{Core Objectives}
 The system must provide the user the ability to lay out a team sheet for any upcoming games. It must also show the availability of players, this may be due to injuries or just being away on that date.     
 \subsection{Other Objectives}
+<<<<<<< HEAD
 It would be desirable to have individual stats for each player rather than an overall rating giving a more detailed overview of a players ability. In addition it would be useful for the client to be able to view other teams players, this would help them adapt team tactics for any upcoming games.
 
+=======
+It would be desirable to have individual stats for each player rather than an overall rating giving a more detailed overview of a players ability.
+>>>>>>> branch 'master' of https://github.com/44746/COMP4Coursework.git
 
 \section{ER Diagrams and Descriptions}
 
