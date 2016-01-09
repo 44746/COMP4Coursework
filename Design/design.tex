@@ -163,7 +163,24 @@ There is a very limited amount of data on the system that needs to be secure. Th
 \subsection{System Security}
 The system will have a password entry to stop any unauthorized users entering the system. This protects the email addresses stored on the system. If the system wasnt secure then the system would be prone to these email addresses being stolen, This would be breach the data protection act 1998. 
 \section{Validation}
-
+\begin{table}[]
+	\centering
+	\caption{My caption}
+	\label{my-label}
+	\begin{tabular}{llll}
+		Item             & Example      & Validation Method                         & Comments                                                                                                                  \\
+		Player Forname   & George       & Format check, Presence check              & To check it only contains letters and that something has been entered.                                                    \\
+		Player Surname   & West         & Format check, Presence check              & To check it only contains letters and that something has been entered.                                                    \\
+		Player Rating    & 8            & Format check, Presence check, Range check & To check that it contains only integers and that something has been entered. Will also have to be between 1-10 inclusive. \\
+		Player Email     & gw@gmail.com & Format check, Presence check              & To check it has an "@" and that something has been entered.                                                               \\
+		Player Positon   & ST           & Format check, Presence check              & To check it only contains letters and that something has been entered.                                                    \\
+		Player Avaliable & Y            & Format check, Presence check              & To check it only contains a letter and that something has been entered.                                                   \\
+		Match Date       & 11/11/15     & Format check, Presence check              & To check that it contains no letters and that something has been entered.                                                 \\
+		Match Oppositon  & Milton       & Format check, Presence check              & To check it only contains letters and that something has been entered.                                                    \\
+		Match Result     & W            & Format check, Presence check              & To check it only contains a letter and that something has been entered.                                                   \\
+		Goal Quantity    & 2            & Format check, Presence check              & To check it only contains integers and that something has been entered.                                                  
+	\end{tabular}
+\end{table}
 \section{Testing}
 \begin{table}[]
 	\centering
